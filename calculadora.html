@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - React</title>
+
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            background-color: #121212;
+            font-family: sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            text-align: center;
+            color: #fff;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .calculator {
+            background-color: #fff;
+            margin: 40px auto;
+            max-width: 400px;
+            padding: 16px;
+            border-radius: 4px;
+        }
+
+        .display {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 16px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+
+        button {
+            border: 0;
+            border-radius: 40px;
+            background-color: #efefef;
+            padding: 8px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        ReactDOM.render(
+            <div>
+                <div class="header">Calculadora</div>
+                <div class="calculator">
+                    <div class="display"></div>
+                    <div class="keyboard">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>0</button>
+                    </div>
+                </div>
+            </div>,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>
