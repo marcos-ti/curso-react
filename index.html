@@ -19,12 +19,14 @@
 
 <body>
     <div id="root"></div>
+    <div id="root2"></div>
+
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script>
         var e = React.createElement;
-
-
+    // Javascript
         ReactDOM.render(
             e(
                 "h1",
@@ -39,6 +41,17 @@
             ),
             document.getElementById("root")
         );
+    </script>
+    <script type="text/babel">
+        // JSX
+        ReactDOM.render(
+            <h1 className="title">
+                Olá Mundo!
+                <br/>
+                <small className="subtitle"> Olá React!</small>
+            </h1>,
+            document.getElementById("root2")
+        )
     </script>
 </body>
 
