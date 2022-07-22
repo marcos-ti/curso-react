@@ -78,15 +78,16 @@
 
         const Header = () => <div class="header">Calculadora</div>;
 
-
+        const Button = (props) => (
+            <button onClick={()=>{props.ClicandoNoNumero(props.valor);}}>{props.valor}</button>
+        )
 
 
         const Calculadora = () => {
-            //           const array = React.useState(" ");
-            //           const display = array[0]; // Estado
-            //           const setDisplay = array[1]; // Função que vai salvar o Estado
 
-            const [display, setDisplay] = React.useState(" ");
+            const manipularNumeroClick = (valor)=> {setDisplay(`${display}${valor}`);}
+
+            const [display, setDisplay] = React.useState("");
 
             return (
                 <div class="calculator">
@@ -94,16 +95,16 @@
                         {display}
                     </div>
                     <div class="keyboard">
-                        <button onClick={() => { setDisplay(display + "7"); }}>7</button>
-                        <button onClick={() => { setDisplay(display + "8"); }}>8</button>
-                        <button>9</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>0</button>
+                        < Button valor="7" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="8" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="9" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="4" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="5" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="6" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="1" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="2" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="3" ClicandoNoNumero={manipularNumeroClick} />
+                        < Button valor="0" ClicandoNoNumero={manipularNumeroClick} />
                     </div>
                 </div>
             );
