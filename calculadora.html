@@ -76,7 +76,7 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel">
 
-        const Header = () => <div class="header">Calculadora</div>;
+        const Header = () => <div className="header">Calculadora</div>;
 
         const Button = (props) => (
             <button onClick={()=>{props.ClicandoNoNumero(props.valor);}}>{props.valor}</button>
@@ -86,25 +86,18 @@
         const Calculadora = () => {
 
             const manipularNumeroClick = (valor)=> {setDisplay(`${display}${valor}`);}
-
+            const teclado = [7,8,9,4,5,6,1,2,3,0];
             const [display, setDisplay] = React.useState("");
 
             return (
-                <div class="calculator">
-                    <div class="display">
+                <div className="calculator">
+                    <div className="display">
                         {display}
                     </div>
-                    <div class="keyboard">
-                        < Button valor="7" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="8" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="9" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="4" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="5" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="6" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="1" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="2" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="3" ClicandoNoNumero={manipularNumeroClick} />
-                        < Button valor="0" ClicandoNoNumero={manipularNumeroClick} />
+                    <div className="keyboard">
+                        {teclado.map(value => (
+                            < Button key={value} valor={value} ClicandoNoNumero={manipularNumeroClick} />
+                        ))}
                     </div>
                 </div>
             );
