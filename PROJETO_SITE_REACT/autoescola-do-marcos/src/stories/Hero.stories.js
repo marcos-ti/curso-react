@@ -1,6 +1,8 @@
 import React from "react";
 
 import Hero from "../components/Hero";
+import BgEstradaImage from "./assets/bg_car.jpg";
+import BgCarroImage from "./assets/bg_estrada.jpg";
 
 export default {
   title: "Hero",
@@ -8,7 +10,7 @@ export default {
 };
 
 export const usage = () => (
-  <Hero title="De uma volta por ai, sossegado!">
+  <Hero title="De uma volta por ai, sossegado!" image={BgEstradaImage}>
     <p>
       Consequat esse laborum mollit commodo incididunt anim labore ex pariatur
       ipsum excepteur Lorem.
@@ -17,7 +19,7 @@ export const usage = () => (
 );
 
 export const withlist = () => (
-  <Hero title="De uma volta por ai, sossegado!">
+  <Hero title="De uma volta por ai, sossegado!" image={BgCarroImage}>
     <ul>
       <li>
         Quis laboris sunt elit Lorem exercitation culpa deserunt id veniam
