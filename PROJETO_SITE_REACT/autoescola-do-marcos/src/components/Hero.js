@@ -1,7 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
 import { breakAt, BreakpointSizes } from "./Breakpoints";
+import HeroStories from "../stories/Hero.stories";
+
+const colorYellow = "#ffc107";
 
 const Root = styled.div`
   color: #fff;
@@ -17,9 +21,27 @@ const Root = styled.div`
 `;
 
 const Title = styled.h1`
+  position: relative;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    background-color: ${colorYellow};
+    height: 5px;
+    width: 70px;
+  }
+
+  strong {
+    color: ${colorYellow};
+  }
 `;
 
 const Content = styled.div`
@@ -37,32 +59,29 @@ const Content = styled.div`
 
   li::before {
     content: "\\2713\\0020";
+    color: ${colorYellow};
   }
 `;
 
 const Container = styled.div`
-  background-color: red;
   width: 100%;
   padding: 8px;
 
   ${breakAt(BreakpointSizes.sm)} {
-    background-color: green;
     padding: 16px;
     margin: 0 auto;
   }
 
   ${breakAt(BreakpointSizes.md)} {
-    background-color: burlywood;
     padding: 24px;
     margin: 0 auto;
   }
   ${breakAt(BreakpointSizes.lg)} {
-    background-color: black;
+    // background-color: rgba(159, 90, 253, 0.9);
     padding: 32px;
     margin: 0 auto;
   }
   ${breakAt(BreakpointSizes.xl)} {
-    background-color: rebeccapurple;
     padding: 64px;
     margin: 0 auto;
   }
@@ -76,5 +95,18 @@ const hero = ({ image, title, children }) => (
     </Container>
   </Root>
 );
+
+hero.propTypes = {
+  /**
+   * Background image
+   */
+  image: PropTypes.string,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  children: PropTypes.node,
+};
+//Criando valores padrão
+// hero.defaultProps = {
+//   title: "Meu Título",
+// };
 
 export default hero;

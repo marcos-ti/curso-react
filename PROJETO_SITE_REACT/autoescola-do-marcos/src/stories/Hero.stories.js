@@ -10,7 +10,7 @@ export default {
 };
 
 export const usage = () => (
-  <Hero title="De uma volta por ai, sossegado!" image={BgEstradaImage}>
+  <Hero title="Um rolê legal!" image={BgEstradaImage}>
     <p>
       Consequat esse laborum mollit commodo incididunt anim labore ex pariatur
       ipsum excepteur Lorem.
@@ -19,7 +19,15 @@ export const usage = () => (
 );
 
 export const withlist = () => (
-  <Hero title="De uma volta por ai, sossegado!" image={BgCarroImage}>
+  <Hero
+    title={
+      <span>
+        Dê uma volta por ai, <br />
+        <strong>sossegado!</strong>
+      </span>
+    }
+    image={BgCarroImage}
+  >
     <ul>
       <li>
         Quis laboris sunt elit Lorem exercitation culpa deserunt id veniam
