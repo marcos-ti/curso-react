@@ -39,15 +39,19 @@ const Content = styled.div`
 `;
 
 const Container = styled.div`
+  background-color: red;
   width: 100%;
   padding: 0 8px;
 
   @media (min-width: 768) {
+    background-color: green;
     padding: 0 16px;
   }
 
   @media (min-width: 1200px) {
+    background-color: blue;
     width: 1140px;
+    padding: 0;
     margin: 0 auto;
   }
 `;
