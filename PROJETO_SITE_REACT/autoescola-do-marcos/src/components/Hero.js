@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 
 import { breakAt, BreakpointSizes } from "./Breakpoints";
-import HeroStories from "../stories/Hero.stories";
+// import HeroStories from "../stories/Hero.stories";
 
 const colorYellow = "#ffc107";
 
@@ -20,29 +20,25 @@ const Root = styled.div`
   `};
 `;
 
-const Title = styled.h1`
-  position: relative;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  margin-bottom: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+// const Title = styled.h1`
+//   position: relative;
+//   font-size: 2rem;
+//   font-weight: 700;
+//   letter-spacing: 1.5px;
+//   margin-bottom: 25px;
+//   padding-bottom: 25px;
+//   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    background-color: ${colorYellow};
-    height: 5px;
-    width: 70px;
-  }
-
-  strong {
-    color: ${colorYellow};
-  }
-`;
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     bottom: -3px;
+//     background-color: ${colorYellow};
+//     height: 5px;
+//     width: 70px;
+//   }
+// `;
 
 const Content = styled.div`
   p,
@@ -87,10 +83,9 @@ const Container = styled.div`
   }
 `;
 
-const hero = ({ image, title, children }) => (
+const hero = ({ image, children }) => (
   <Root image={image}>
     <Container>
-      <Title>{title}</Title>
       <Content>{children}</Content>
     </Container>
   </Root>
@@ -101,7 +96,6 @@ hero.propTypes = {
    * Background image
    */
   image: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   children: PropTypes.node,
 };
 //Criando valores padrão
