@@ -1,9 +1,9 @@
 import React from "react";
 
-import Hero from "../components/Hero";
-import BgEstradaImage from "./assets/bg_car.jpg";
-import BgCarroImage from "./assets/bg_estrada.jpg";
-import Heading from "../components/Heading";
+import Hero from "./Hero";
+import BgEstradaImage from "../stories/assets/bg_car.jpg";
+import BgCarroImage from "../stories/assets/bg_estrada.jpg";
+import Heading from "./Heading";
 
 export default {
   title: "Hero",
