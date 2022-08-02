@@ -1,4 +1,5 @@
 import React from "react";
+import { text } from "@storybook/addon-knobs";
 
 import Hero from "./Hero";
 import BgEstradaImage from "../stories/assets/bg_car.jpg";
@@ -12,10 +13,12 @@ export default {
 
 export const usage = () => (
   <Hero image={BgEstradaImage}>
-    <h1>Um rolê legal!</h1>
+    <h1>{text("Title", "Um rolê legal!")}</h1>
     <p>
-      Consequat esse laborum mollit commodo incididunt anim labore ex pariatur
-      ipsum excepteur Lorem.
+      {text(
+        "Text",
+        "Consequat esse laborum mollit commodo incididunt anim labore ex pariatur ipsum excepteur Lorem."
+      )}
     </p>
   </Hero>
 );
